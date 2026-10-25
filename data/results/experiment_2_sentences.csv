@@ -1,0 +1,7 @@
+sentence_index,source_text,reference_text,method,beam_width,translation,latency_ms,sentence_bleu,sentence_chrf,tokens_count
+0,"வணக்கம், நீங்கள் எப்படி இருக்கிறீர்கள்?","Hello, how are you?",greedy,1,How are you doing?,321.87,19.36,43.52,6
+0,"வணக்கம், நீங்கள் எப்படி இருக்கிறீர்கள்?","Hello, how are you?",beam,4,"Hello, how are you?",458.01,100.0,100.0,7
+1,செயற்கை நுண்ணறிவு இன்றைய உலகில் மிக வேகமாக வளர்ந்து வரும் ஒரு முக்கிய தொழில்நுட்பமாகும்.,Artificial intelligence is an important technology developing very rapidly in today's world.,greedy,1,The fastest growing technology in the world,387.59,3.67,20.75,8
+1,செயற்கை நுண்ணறிவு இன்றைய உலகில் மிக வேகமாக வளர்ந்து வரும் ஒரு முக்கிய தொழில்நுட்பமாகும்.,Artificial intelligence is an important technology developing very rapidly in today's world.,beam,4,One of the fastest growing technology in the world.,870.97,7.39,22.72,11
+2,இயற்கை மொழி செயலாக்கம் மனித மொழிகளை கணினிகள் புரிந்துகொள்ள உதவுகிறது.,Natural language processing helps computers understand human languages.,greedy,1,The natural understanding of language.,334.02,5.85,32.95,7
+2,இயற்கை மொழி செயலாக்கம் மனித மொழிகளை கணினிகள் புரிந்துகொள்ள உதவுகிறது.,Natural language processing helps computers understand human languages.,beam,4,The natural understanding of language.,503.99,5.85,32.95,7

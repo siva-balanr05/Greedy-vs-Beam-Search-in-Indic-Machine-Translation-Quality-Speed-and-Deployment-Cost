@@ -1,0 +1,33 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Database & runtime files
+*.db-journal
+*.log
+
+# Large model binaries & checkpoints
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.onnx
+
+# OS files
+.DS_Store
+Thumbs.db

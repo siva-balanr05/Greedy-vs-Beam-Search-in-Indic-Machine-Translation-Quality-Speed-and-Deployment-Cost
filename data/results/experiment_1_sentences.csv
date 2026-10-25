@@ -1,0 +1,10 @@
+sentence_index,source_text,reference_text,method,beam_width,translation,latency_ms,sentence_bleu,sentence_chrf,tokens_count
+0,"வணக்கம், நீங்கள் எப்படி இருக்கிறீர்கள்?","Hello, how are you?",greedy,1,Theres a lot of people who are not,1127.4,5.52,14.98,11
+0,"வணக்கம், நீங்கள் எப்படி இருக்கிறீர்கள்?","Hello, how are you?",beam,2,"In addition to this,",1119.7,8.75,5.14,7
+0,"வணக்கம், நீங்கள் எப்படி இருக்கிறீர்கள்?","Hello, how are you?",beam,4,"In addition to this, the",1678.58,8.12,5.95,8
+1,செயற்கை நுண்ணறிவு இன்றைய உலகில் மிக வேகமாக வளர்ந்து வரும் ஒரு முக்கிய தொழில்நுட்பமாகும்.,Artificial intelligence is an important technology developing very rapidly in today's world.,greedy,1,and other people in the same age. and,1085.15,3.64,9.22,11
+1,செயற்கை நுண்ணறிவு இன்றைய உலகில் மிக வேகமாக வளர்ந்து வரும் ஒரு முக்கிய தொழில்நுட்பமாகும்.,Artificial intelligence is an important technology developing very rapidly in today's world.,beam,2,and other conditions of life.,1720.92,2.53,6.94,8
+1,செயற்கை நுண்ணறிவு இன்றைய உலகில் மிக வேகமாக வளர்ந்து வரும் ஒரு முக்கிய தொழில்நுட்பமாகும்.,Artificial intelligence is an important technology developing very rapidly in today's world.,beam,4,and so on and so on. and so on and so forth.,4731.91,2.84,7.72,16
+2,இயற்கை மொழி செயலாக்கம் மனித மொழிகளை கணினிகள் புரிந்துகொள்ள உதவுகிறது.,Natural language processing helps computers understand human languages.,greedy,1,and other people under pressure. and,1100.49,4.94,15.28,9
+2,இயற்கை மொழி செயலாக்கம் மனித மொழிகளை கணினிகள் புரிந்துகொள்ள உதவுகிறது.,Natural language processing helps computers understand human languages.,beam,2,They are under pressure.,1595.06,4.8,10.99,7
+2,இயற்கை மொழி செயலாக்கம் மனித மொழிகளை கணினிகள் புரிந்துகொள்ள உதவுகிறது.,Natural language processing helps computers understand human languages.,beam,4,It's like you're under pressure.,3014.09,4.92,11.59,12

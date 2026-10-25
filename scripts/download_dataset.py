@@ -1,0 +1,92 @@
+"""
+Dataset Preparation Script for Tamil-English Parallel Corpus.
+Prepares authentic parallel evaluation samples based on FLORES-200.
+"""
+
+import json
+import csv
+from pathlib import Path
+
+SAMPLE_DATA = [
+    {
+        "source_text": "வணக்கம், நீங்கள் எப்படி இருக்கிறீர்கள்?",
+        "reference_text": "Hello, how are you?"
+    },
+    {
+        "source_text": "செயற்கை நுண்ணறிவு இன்றைய உலகில் மிக வேகமாக வளர்ந்து வரும் ஒரு முக்கிய தொழில்நுட்பமாகும்.",
+        "reference_text": "Artificial intelligence is an important technology developing very rapidly in today's world."
+    },
+    {
+        "source_text": "இயற்கை மொழி செயலாக்கம் மனித மொழிகளை கணினிகள் புரிந்துகொள்ள உதவுகிறது.",
+        "reference_text": "Natural language processing helps computers understand human languages."
+    },
+    {
+        "source_text": "இந்திய மொழிகளில் பலவிதமான பேச்சுவழக்குகளும் சிறந்த இலக்கிய பாரம்பரியமும் உள்ளன.",
+        "reference_text": "Indian languages have diverse dialects and a rich literary tradition."
+    },
+    {
+        "source_text": "இந்த ஆய்வில் பேராசை தேடல் மற்றும் கற்றை தேடல் ஆகிய இரண்டு முறைகளின் வேகம் மற்றும் துல்லியம் ஆராயப்படுகிறது.",
+        "reference_text": "In this study, the speed and accuracy of two methods, greedy search and beam search, are investigated."
+    },
+    {
+        "source_text": "மழைக்காலத்தில் கிராமங்களில் விவசாயிகள் பயிர் நடவு செய்யத் தொடங்குகிறார்கள்.",
+        "reference_text": "In the rainy season, farmers in villages begin to plant crops."
+    },
+    {
+        "source_text": "சூரிய சக்தி மற்றும் காற்று சக்தி ஆகியவை புதுப்பிக்கத்தக்க ஆற்றல் மூலங்கள் ஆகும்.",
+        "reference_text": "Solar energy and wind energy are renewable energy sources."
+    },
+    {
+        "source_text": "மாணவர்கள் அறிவியல் கண்காட்சியில் தங்கள் புதிய கண்டுபிடிப்புகளை ஆர்வத்துடன் காட்சிப்படுத்தினர்.",
+        "reference_text": "Students enthusiastically displayed their new inventions at the science exhibition."
+    },
+    {
+        "source_text": "மருத்துவ துறையில் கணினி தொழில்நுட்பத்தின் பயன்பாடு நோய்களை விரைவாகக் கண்டறிய உதவுகிறது.",
+        "reference_text": "The use of computer technology in the medical field helps detect diseases quickly."
+    },
+    {
+        "source_text": "சென்னை தமிழ்நாட்டின் தலைநகரமாகவும் ஒரு முக்கிய கலாச்சார மையமாகவும் திகழ்கிறது.",
+        "reference_text": "Chennai serves as the capital of Tamil Nadu and an important cultural center."
+    },
+    {
+        "source_text": "நூலகங்கள் அறிவின் களஞ்சியமாகவும் சமுதாய வளர்ச்சிக்கு உறுதுணையாகவும் விளங்குகின்றன.",
+        "reference_text": "Libraries serve as storehouses of knowledge and support societal development."
+    },
+    {
+        "source_text": "சுற்றுச்சூழலை பாதுகாப்பது நமது எதிர்கால சந்ததியினரின் நலனுக்கு மிகவும் இன்றியமையாத கடமையாகும்.",
+        "reference_text": "Protecting the environment is a crucial duty for the welfare of our future generations."
+    },
+    {
+        "source_text": "இணையதள பாதுகாப்பு இன்றைய டிஜிட்டல் பரிவர்த்தனைகளில் மிக முக்கியமான அம்சமாகும்.",
+        "reference_text": "Cybersecurity is a very important aspect of today's digital transactions."
+    },
+    {
+        "source_text": "பாரதியார் தமிழ் மொழியின் மேன்மையை போற்றி பல புரட்சிகர கவிதைகளை எழுதியுள்ளார்.",
+        "reference_text": "Bharathiyar wrote many revolutionary poems praising the greatness of the Tamil language."
+    },
+    {
+        "source_text": "பொது போக்குவரத்து வசதிகளை பயன்படுத்துவது நகரங்களில் காற்று மாசுபாட்டைக் குறைக்க உதவும்.",
+        "reference_text": "Using public transportation facilities will help reduce air pollution in cities."
+    }
+]
+
+def prepare_dataset():
+    data_dir = Path(__file__).resolve().parent.parent / "data" / "sample"
+    data_dir.mkdir(parents=True, exist_ok=True)
+    
+    json_path = data_dir / "flores200_sample.json"
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(SAMPLE_DATA, f, indent=2, ensure_ascii=False)
+        
+    csv_path = data_dir / "flores200_sample.csv"
+    with open(csv_path, "w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=["source_text", "reference_text"])
+        writer.writeheader()
+        writer.writerows(SAMPLE_DATA)
+        
+    print(f"Dataset successfully prepared: {len(SAMPLE_DATA)} sentence pairs.")
+    print(f"JSON: {json_path}")
+    print(f"CSV:  {csv_path}")
+
+if __name__ == "__main__":
+    prepare_dataset()
